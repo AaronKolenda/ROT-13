@@ -33,3 +33,15 @@ var translateCharacter = function(character) {
   return character;
 }
 
+$("#inputTranslate").click(function() {
+  var text = $("#inputText").val();
+
+  var charArray = text.split('');
+
+  var codedText = _.map(charArray, function(value){
+      return translateCharacter(value);
+    });
+
+  $("#displayText").html(codedText);
+
+});
